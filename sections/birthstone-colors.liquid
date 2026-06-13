@@ -1,0 +1,40 @@
+{% schema %}
+{
+  "name": "Birthstone Colors",
+  "settings": [
+    { "type": "url", "id": "colors_image", "label": "All Colors Image URL" }
+  ],
+  "presets": [{ "name": "Birthstone Colors" }]
+}
+{% endschema %}
+
+<section class="story" style="padding-top: 20px;">
+  <h2>12 Birthstone Colors — One for Every Story.</h2>
+  <p>Each gemstone represents a birth month, a personality, a memory. Choose the one that reminds you most of them.</p>
+
+  <div class="color-grid">
+    <div class="color-swatch"><div class="swatch-circle" style="background:#c0392b;"></div><div class="swatch-name">Red (Jan)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#8e44ad;"></div><div class="swatch-name">Purple (Feb)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#87CEEB;"></div><div class="swatch-name">Light Blue (Mar)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#e8e8e8;border:1px solid #ddd;"></div><div class="swatch-name">Clear (Apr)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#27ae60;"></div><div class="swatch-name">Green (May)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#b8a9c9;"></div><div class="swatch-name">Lavender (Jun)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#9b59b6;"></div><div class="swatch-name">Violet (Jul)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#f1c40f;"></div><div class="swatch-name">Yellow (Aug)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#2980b9;"></div><div class="swatch-name">Blue (Sep)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#e91e63;"></div><div class="swatch-name">Pink (Oct)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#e67e22;"></div><div class="swatch-name">Orange (Nov)</div></div>
+    <div class="color-swatch"><div class="swatch-circle" style="background:#34495e;"></div><div class="swatch-name">Sky Blue (Dec)</div></div>
+  </div>
+
+  {% if section.settings.colors_image != blank %}
+    <div class="img-row">
+      <img src="{{ section.settings.colors_image }}" alt="All 12 birthstone color options" loading="lazy">
+    </div>
+  {% else %}
+    <div class="img-row">
+      <img src="https://bellaoliviagifts.com/cdn/shop/files/3_1_52_76789e60-4742-4a8f-9865-f2f8c7653209.png?v=1771537521&width=1445" alt="All 12 birthstone color options" loading="lazy">
+    </div>
+  {% endif %}
+  <p style="font-size:13px;color:var(--muted);margin-top:12px;text-align:center;">All 12 birthstone color options — each one uniquely beautiful.</p>
+</section>
