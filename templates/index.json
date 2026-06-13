@@ -1,0 +1,84 @@
+{
+  "current": {
+    "sections": {
+      "hero": {
+        "type": "hero-banner",
+        "settings": {
+          "badge_text": "Personalized Memorial Jewelry",
+          "heading": "Keep Them <em>Close</em> to Your Heart, <em>Always</em>.",
+          "subtitle": "A beautiful vintage cylinder urn necklace with a genuine birthstone — hold a small portion of ashes, forever.",
+          "product_handle": "personalized-gemstone-urn-necklace",
+          "old_price": "$69.99",
+          "new_price": "$34.99",
+          "save_text": "SAVE 50% — LIMITED TIME",
+          "cta_text": "Buy Now — $34.99",
+          "payment_icons": "PayPal · Visa · Mastercard · Amex",
+          "hero_image": "https://bellaoliviagifts.com/cdn/shop/files/1727420583_2.webp?v=1771536312&width=1445"
+        }
+      },
+      "trust_strip": {
+        "type": "trust-strip",
+        "settings": {}
+      },
+      "story": {
+        "type": "product-story",
+        "settings": {}
+      },
+      "image_showcase": {
+        "type": "image-showcase",
+        "settings": {}
+      },
+      "mid_cta": {
+        "type": "mid-page-cta",
+        "settings": {}
+      },
+      "how_it_works": {
+        "type": "how-it-works",
+        "settings": {}
+      },
+      "colors": {
+        "type": "birthstone-colors",
+        "settings": {}
+      },
+      "includes": {
+        "type": "whats-included",
+        "settings": {}
+      },
+      "gift": {
+        "type": "gift-section",
+        "settings": {}
+      },
+      "reviews": {
+        "type": "reviews",
+        "settings": {}
+      },
+      "faq": {
+        "type": "faq",
+        "settings": {}
+      },
+      "guarantee": {
+        "type": "guarantee",
+        "settings": {}
+      },
+      "bottom_cta": {
+        "type": "bottom-cta",
+        "settings": {}
+      }
+    },
+    "order": [
+      "hero",
+      "trust_strip",
+      "story",
+      "image_showcase",
+      "mid_cta",
+      "how_it_works",
+      "colors",
+      "includes",
+      "gift",
+      "reviews",
+      "faq",
+      "guarantee",
+      "bottom_cta"
+    ]
+  }
+}
