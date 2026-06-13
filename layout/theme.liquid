@@ -1,77 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ request.locale.iso_code }}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }} — {{ shop.name }}</title>
-  {% if page_description %}
-    <meta name="description" content="{{ page_description }}">
-  {% endif %}
-
-  {{ content_for_header }}
-
-  {{ 'base.css' | asset_url | stylesheet_tag }}
-
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','837241862331756');fbq('track','PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=837241862331756&ev=PageView&noscript=1"/></noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title | default: shop.name }} | {{ shop.name }}</title>
+{% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
+{{ content_for_header }}
+{{ 'base.css' | asset_url | stylesheet_tag }}
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','837241862331756');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=837241862331756&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
-  {{ content_for_layout }}
-
-  <!-- Meta Pixel: ViewContent -->
-  <script>
-    fbq('track', 'ViewContent', {
-      content_name: 'Gemstone Vintage Cylinder Urn Necklace',
-      content_category: 'Memorial Jewelry',
-      value: 34.99,
-      currency: 'USD'
-    });
-  </script>
-
-  <!-- FAQ Toggle -->
-  <script>
-    document.querySelectorAll('.faq-item').forEach(function(item) {
-      item.addEventListener('click', function() { item.classList.toggle('open'); });
-    });
-  </script>
-
-  <!-- Buy Now: Add to cart then redirect to checkout -->
-  <script>
-    document.querySelectorAll('.buy-now-btn').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.textContent = 'Processing...';
-        var variantId = btn.getAttribute('data-variant-id');
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: variantId, quantity: 1 })
-        }).then(function() {
-          fbq('track', 'AddToCart', {
-            content_name: 'Gemstone Vintage Cylinder Urn Necklace',
-            value: 34.99,
-            currency: 'USD'
-          });
-          window.location.href = '/checkout';
-        }).catch(function() {
-          btn.disabled = false;
-          btn.textContent = 'Buy Now — $34.99';
-          alert('Something went wrong. Please try again.');
-        });
-      });
-    });
-
-    // Smooth scroll for nav CTA
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        var target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-      });
-    });
-  </script>
-</body>
-</html>
+{{ content_for_layout }}
+<script>fbq('track','ViewContent',{content_name:'Gemstone Urn Necklace',content_category:'Memorial Jewelry',value:34.99,currency:'USD'});</script>
+<script>document.querySelectorAll('.faq-item').forEach(function(i){i.addEventListener('click',function(){i.classList.toggle('open');});});</script>
+<script>document.querySelectorAll('.buy-now-btn').forEach(function(btn){btn.addEventListener('click',function(e){e.preventDefault();btn.disabled=true;btn.textContent='Processing...';var vid=btn.getAttribute('data-variant-id');fetch('/cart/add.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:vid,quantity:1})}).then(function(){window.location.href='/checkout';}).catch(function(){btn.disabled=false;btn.textContent='Buy Now - $34.99';});});});</script>
+</body></html>

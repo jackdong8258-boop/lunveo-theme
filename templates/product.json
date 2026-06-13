@@ -1,5 +1,11 @@
 {
-  "name": "Lunveo Landing Theme",
-  "version": "1.0.0",
-  "author": "Lunveo"
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
 }

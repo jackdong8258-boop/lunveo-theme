@@ -1,17 +1,2 @@
-{% schema %}
-{
-  "name": "Image Showcase",
-  "settings": [
-    { "type": "url", "id": "img1", "label": "Image 1" },
-    { "type": "url", "id": "img2", "label": "Image 2" },
-    { "type": "url", "id": "img3", "label": "Image 3" }
-  ],
-  "presets": [{ "name": "Image Showcase" }]
-}
-{% endschema %}
-
-<div class="image-strip">
-  <img src="{{ section.settings.img1 | default: 'https://bellaoliviagifts.com/cdn/shop/files/1727420588_6.webp?v=1771536312&width=1445' }}" alt="Lunveo urn necklace - worn elegantly" loading="lazy">
-  <img src="{{ section.settings.img2 | default: 'https://bellaoliviagifts.com/cdn/shop/files/1727420589_7.webp?v=1771536312&width=1445' }}" alt="Lunveo urn necklace - detail view" loading="lazy">
-  <img src="{{ section.settings.img3 | default: 'https://bellaoliviagifts.com/cdn/shop/files/1727420591_9.webp?v=1771536312&width=1445' }}" alt="Lunveo urn necklace - funnel kit" loading="lazy">
-</div>
+{% schema %}{"name":"Image Showcase","settings":[],"presets":[{"name":"Image Showcase"}]}{% endschema %}
+<section class="showcase-grid"><div class="showcase-item"><img src="https://bellaoliviagifts.com/cdn/shop/files/1727420583_1.webp?v=1771536312&amp;width=600" alt="Urn necklace detail" loading="lazy"></div><div class="showcase-item"><img src="https://bellaoliviagifts.com/cdn/shop/files/1727420583_3.webp?v=1771536312&amp;width=600" alt="Birthstone options" loading="lazy"></div></section>

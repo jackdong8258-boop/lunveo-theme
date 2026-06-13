@@ -1,3 +1,3 @@
-# Lunveo Theme
+# Lunveo Landing Theme
 
-Shopify landing page theme with Buy Now checkout.
+Shopify OS 2.0 theme for Lunveo dropshipping store.

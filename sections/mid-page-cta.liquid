@@ -1,22 +1,2 @@
-{% schema %}
-{
-  "name": "Mid Page CTA",
-  "settings": [
-    { "type": "text", "id": "product_handle", "label": "Product Handle", "default": "personalized-gemstone-urn-necklace" }
-  ],
-  "presets": [{ "name": "Mid Page CTA" }]
-}
-{% endschema %}
-
-<section class="story" style="padding-top: 20px;">
-  <div class="price-section">
-    <div class="save-tag" style="margin-bottom: 14px;">SAVE 50% — LIMITED TIME</div>
-    {% assign product = all_products[section.settings.product_handle] %}
-    {% if product and product.variants.size > 0 %}
-      <button class="btn-primary buy-now-btn" data-variant-id="{{ product.variants.first.id }}">Create Your Memorial Necklace →</button>
-    {% else %}
-      <a href="/products/{{ section.settings.product_handle }}" class="btn-primary">Create Your Memorial Necklace →</a>
-    {% endif %}
-    <p class="btn-sub">PayPal · Visa · Mastercard · Amex</p>
-  </div>
-</section>
+{% schema %}{"name":"Mid Page CTA","settings":[],"presets":[{"name":"Mid Page CTA"}]}{% endschema %}
+<section class="mid-cta"><div class="mid-cta-inner"><h3>Honor Their Memory Today</h3><p>A meaningful gift for yourself or someone who&#39;s grieving.</p><a href="#hero" class="btn-primary mid-buy-btn">Get Yours Now - $34.99</a></div></section>
