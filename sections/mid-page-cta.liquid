@@ -1,0 +1,22 @@
+{% schema %}
+{
+  "name": "Mid Page CTA",
+  "settings": [
+    { "type": "text", "id": "product_handle", "label": "Product Handle", "default": "personalized-gemstone-urn-necklace" }
+  ],
+  "presets": [{ "name": "Mid Page CTA" }]
+}
+{% endschema %}
+
+<section class="story" style="padding-top: 20px;">
+  <div class="price-section">
+    <div class="save-tag" style="margin-bottom: 14px;">SAVE 50% — LIMITED TIME</div>
+    {% assign product = all_products[section.settings.product_handle] %}
+    {% if product and product.variants.size > 0 %}
+      <button class="btn-primary buy-now-btn" data-variant-id="{{ product.variants.first.id }}">Create Your Memorial Necklace →</button>
+    {% else %}
+      <a href="/products/{{ section.settings.product_handle }}" class="btn-primary">Create Your Memorial Necklace →</a>
+    {% endif %}
+    <p class="btn-sub">PayPal · Visa · Mastercard · Amex</p>
+  </div>
+</section>
