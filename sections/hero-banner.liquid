@@ -1,0 +1,56 @@
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    { "type": "text", "id": "badge_text", "label": "Badge Text", "default": "Personalized Memorial Jewelry" },
+    { "type": "richtext", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle" },
+    { "type": "text", "id": "product_handle", "label": "Product Handle" },
+    { "type": "text", "id": "old_price", "label": "Old Price", "default": "$69.99" },
+    { "type": "text", "id": "new_price", "label": "New Price", "default": "$34.99" },
+    { "type": "text", "id": "save_text", "label": "Save Tag", "default": "SAVE 50% — LIMITED TIME" },
+    { "type": "text", "id": "cta_text", "label": "CTA Button Text", "default": "Buy Now — $34.99" },
+    { "type": "text", "id": "payment_icons", "label": "Payment Icons Text" },
+    { "type": "url", "id": "hero_image", "label": "Hero Image URL" }
+  ],
+  "presets": [{ "name": "Hero Banner" }]
+}
+{% endschema %}
+
+<nav>
+  <div class="logo">LUNVEO</div>
+  <a href="#bottom-cta" class="nav-cta">Shop Now →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">{{ section.settings.badge_text }}</div>
+  <h1>{{ section.settings.heading }}</h1>
+  <p class="hero-sub">{{ section.settings.subtitle }}</p>
+
+  <div class="price-section">
+    <div class="price-row">
+      <span class="old-price">{{ section.settings.old_price }}</span>
+      <span class="new-price">{{ section.settings.new_price }}</span>
+    </div>
+    <div class="save-tag">{{ section.settings.save_text }}</div>
+
+    {% assign product = all_products[section.settings.product_handle] %}
+    {% if product and product.variants.size > 0 %}
+      <button class="btn-primary buy-now-btn" data-variant-id="{{ product.variants.first.id }}">
+        {{ section.settings.cta_text }}
+      </button>
+    {% else %}
+      <a href="/products/{{ section.settings.product_handle }}" class="btn-primary">{{ section.settings.cta_text }}</a>
+    {% endif %}
+
+    {% if section.settings.payment_icons != blank %}
+      <p class="btn-sub">{{ section.settings.payment_icons }}</p>
+    {% endif %}
+  </div>
+
+  {% if section.settings.hero_image != blank %}
+    <div class="hero-img-wrapper">
+      <img src="{{ section.settings.hero_image }}" alt="Lunveo Personalized Gemstone Vintage Cylinder Urn Necklace">
+    </div>
+  {% endif %}
+</section>
